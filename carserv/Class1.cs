@@ -12,15 +12,15 @@ public class Class1
     SqlDataAdapter sda;
     SqlDataReader sdr;
     DataTable d;
-	public Class1()
-	{
+    public Class1()
+    {
         con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\Desktop\carserv\carserv\App_Data\Car.mdf;Integrated Security=True");
         con.Open();
-	}
-     public DataTable get_data(string q)
+    }
+    public DataTable get_data(string q)
     {
         d = new DataTable();
-       sda = new SqlDataAdapter(q, con);
+        sda = new SqlDataAdapter(q, con);
         sda.Fill(d);
         return d;
     }
@@ -30,7 +30,5 @@ public class Class1
         cmd = new SqlCommand(q, con);
         cmd.ExecuteNonQuery();
         return true;
-        
-    
     }
 }
